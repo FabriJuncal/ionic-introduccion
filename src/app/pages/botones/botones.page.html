@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Botón para volver a la página anterior -->
+    <!-- slot="start": Indicamos que posicionaremos el botón al inicio del Toolbar -->
+    <ion-buttons slot="start">
+      <!-- defaultHref: definimos la ruta por default en el caso que no se tenga un historial de paginas, 
+                        así de este modo redireccione a la ruta vacia y a su vez como lo programamos nos 
+                        redirecciona al menu principal -->
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>botones</ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button color="primary">
+        <ion-icon name="star"></ion-icon>
+      </ion-button>
+
+      <ion-button color="primary">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- Tipo de Botones -->
+
+<!-- Default -->
+<ion-button>Default</ion-button>
+
+<!-- Anchor -->
+<!-- href: es el clasico atributo que se utiliza para redireccionar a otra pagina -->
+<!-- routerLink: este atributo se utiliza para redireccionar a otra pagina, pero sin que esta se recargue -->
+<ion-button href="#">Router 1</ion-button>
+<ion-button routerLink="#">Router 2</ion-button>
+
+<!-- Colors -->
+<!-- color: con este atributo le agregamos colores ya definido en los estilos globales, parecido a bootstrap -->
+<ion-button color="primary">Primary</ion-button>
+<ion-button color="secondary">Secondary</ion-button>
+<ion-button color="tertiary">Tertiary</ion-button>
+<ion-button color="success">Success</ion-button>
+<ion-button color="warning">Warning</ion-button>
+<ion-button color="danger">Danger</ion-button>
+<ion-button color="light">Light</ion-button>
+<ion-button color="medium">Medium</ion-button>
+<ion-button color="dark">Dark</ion-button>
+
+<!-- Expand -->
+<!-- expand: este atributo es utilizado para definir el liminante a lo ancho del botón -->
+<ion-button expand="full">Full Button</ion-button>
+<ion-button expand="block">Block Button</ion-button>
+
+<!-- Round -->
+<!-- shape: este atributo es utilizado para definir si el botón será redondeado o no -->
+<ion-button shape="round">Round Button</ion-button>
+
+<!-- Fill -->
+<!-- fill: este atributo es utilizado para definir el fondo del botón (solo con bordes, sin fondo o con fondo) -->
+<ion-button expand="full" fill="outline">Outline + Full</ion-button>
+<ion-button expand="block" fill="outline">Outline + Block</ion-button>
+<ion-button expand="full" fill="clear">Clear + Full</ion-button>
+<ion-button shape="round" fill="outline">Outline + Round</ion-button>
+
+<!-- Icons -->
+<!-- Formas de agregar un icono a un botón -->
+<!-- slot: con este atributo se controla la ubicación del elemento -->
+<ion-button>
+  <ion-icon slot="start" name="star"></ion-icon>
+  Left Icon
+</ion-button>
+
+<ion-button>
+  Right Icon
+  <ion-icon slot="end" name="star"></ion-icon>
+</ion-button>
+
+<ion-button>
+  <ion-icon slot="icon-only" name="star"></ion-icon>
+</ion-button>
+
+<!-- Sizes -->
+<!-- size: con este atributo controlamos el tamaño del botón -->
+<ion-button size="large">Large</ion-button>
+<ion-button>Default</ion-button>
+<ion-button size="small">Small</ion-button>
+
+</ion-content>

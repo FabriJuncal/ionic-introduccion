@@ -25,6 +25,11 @@ export class InicioPage implements OnInit {
       icon: 'person-circle-outline',
       name: 'Avatar',
       redirectTo: '/avatar'
+    },
+    {
+      icon: 'apps-outline',
+      name: 'Botones y Router',
+      redirectTo: '/botones'
     }
   ];
 
