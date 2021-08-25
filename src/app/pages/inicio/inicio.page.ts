@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
+
+  // Este array sirve para cargar los Menus (de los componentes) de la pantalla principal
+  // Solamente se tendra que cargar un objeto con: el icono, nombre, y la ruta de redirección
   componentes: Componente[] = [
     {
       icon: 'albums-outline',
@@ -17,6 +20,11 @@ export class InicioPage implements OnInit {
       icon: 'alert-circle-outline',
       name: 'Alert',
       redirectTo: '/alert'
+    },
+    {
+      icon: 'person-circle-outline',
+      name: 'Avatar',
+      redirectTo: '/avatar'
     }
   ];
 
