@@ -1,0 +1,13 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="action sheet": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "action-sheet.page.ts" por el atributo "titulo" -->
+<app-header titulo="action sheet"></app-header>
+
+<ion-content>
+    <!-- (click)="presentActionSheet()": Evento que ejecutará la función que mostrará el "Action Sheet" -->
+    <!-- expand="full": Indicamos que se expanda el ancho en toda la pantalla -->
+    <!-- color="primary": Es un atributo de ionic donde ya contiene colores predeterminados -->
+    <ion-button (click)="presentActionSheet()" expand="full" color="primary">
+        Action Sheet
+    </ion-button>
+</ion-content>

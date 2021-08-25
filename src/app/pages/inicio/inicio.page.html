@@ -1,0 +1,28 @@
+<!-- class="ion-no-border": Esta clase quita el borde sompreado del Header -->
+<ion-header class="ion-no-border">
+  <!-- toolbar: es utilizado para agregar componentes dentro del "header", como por ejemplo botones para volver a la pagina anterior -->
+  <ion-toolbar>
+    <ion-title>Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+  <!-- *ngFor: Es la manera que tiene Angular para iterar un componente/html -->
+  <!-- routerLink: Es similar al href comun, solo que realiza la redirección sin cargar la pagina -->
+  <!-- [atributo]: Es la manera que tiene Angular para pasarle a un atributo una variable definida en el archivo "[componente].ts" -->
+  <!-- detail: Muestra a la derecha una flecha indicando que se puede tocar para que nos redireccione o muestre algo -->
+    <ion-item 
+      *ngFor="let c of componentes"
+      [routerLink]="c.redirectTo" 
+      detail>
+        <!-- slot: Con este atributo indicamos donde queremos posicionar el elemento -->
+        <!-- name: Con este atributo indicamos que icono queremos visualizar -->
+        <!-- {{ c.icon }}: De esta manera indicamos que queremos pasarle al atributo "name" la variable "c.icon" -->
+        <ion-icon slot="start" name="{{ c.icon }}"></ion-icon>
+        <ion-label>{{ c.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

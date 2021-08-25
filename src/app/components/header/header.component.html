@@ -1,0 +1,19 @@
+<!-- class="ion-no-border": Esta clase quita el borde sompreado del Header -->
+<ion-header class="ion-no-border">
+  <!-- toolbar: es utilizado para agregar componentes dentro del "header", como por ejemplo botones para volver a la pagina anterior -->
+  <ion-toolbar>
+    <!-- buttons: es utilizado para cargar varios botónes que esten juntos -->
+    <!-- slot="start": ubica el botón de back alineado con el titulo -->
+    <ion-buttons slot="start">
+      <!-- back-button: es utilizado para crear un botón que regresará a la pagina anterios si este con tiene un historial de paginas -->
+      <!-- text: agrega texto al botón de back -->
+      <!-- defaultHref="/": agrega por default la ruta que queremos que nos redireccione si no tenemos un historial de paginas,
+                            al agregar "/" nos redireccionará a una ruta vacia, pero como tenemos configurado en el "routing",
+                            este nos redireccionará a su vez a la pagina de "componentes" -->
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- class="ion-text-capitalize": Esta clase capitaliza el texto -->
+    <ion-title class="ion-text-capitalize"> {{ titulo }} </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
