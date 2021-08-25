@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   // LazyLoad(Carga Perezosa): Es un proceso que ayuda a que los componentes se carguen mas rapidos
   // Cuando vemos que un Route se carga con la función "loadChildren", quiere decir que utiliza "LazyLoad"
-  // Para optimizar la carga del componente
+  // Para optimizar la carga del componente, es decir ayuda a las redirecciones sin recargar la pagina.
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'card',
     loadChildren: () => import('./pages/card/card.module').then( m => m.CardPageModule)
+  },
+  {
+    path: 'check',
+    loadChildren: () => import('./pages/check/check.module').then( m => m.CheckPageModule)
   },
 ];
 

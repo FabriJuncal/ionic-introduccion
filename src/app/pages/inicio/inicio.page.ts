@@ -28,13 +28,18 @@ export class InicioPage implements OnInit {
     },
     {
       icon: 'apps-outline',
-      name: 'Botones y Router',
+      name: 'Botones',
       redirectTo: '/botones'
     },
     {
       icon: 'card-outline',
       name: 'Cards',
       redirectTo: '/card'
+    },
+    {
+      icon: 'checkmark-circle-outline',
+      name: 'Checkboxs',
+      redirectTo: '/check'
     }
   ];
 

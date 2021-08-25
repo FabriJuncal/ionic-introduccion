@@ -1,0 +1,29 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="action sheet": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "action-sheet.page.ts" por el atributo "titulo" -->
+<app-header titulo="checkboxs"></app-header>
+
+<ion-content>
+    <!-- list: este componente da estilo a las listas (tambien sirve para facilitar el funcionamiento de ordenado) -->
+    <ion-list>
+        <!-- item: prepara el espacio para los elementos que vayan dentro 
+            (tambien agrega algunas funcionalidades dependiendo del elemento que vaya dentro) -->
+        <!-- *ngFor: atributo que ayuda a recorrer arrays definidos en los archivos ".ts" -->
+        <!-- (click): definimos la función que queremos que se ejecute cuando se cumple el evento "Click" -->
+        <ion-item 
+            *ngFor="let check of data"
+            (click)="onClick( check )">
+                <ion-label>{{ check.name }}</ion-label>
+                <!-- [ATRIBUTO]: los atributos que vayan dentro de corchetes, quiere decir que tomará variables de los archivos ".ts" -->
+                <!-- disabled: definimos si el checks estará "habilitado" o "desactivado" -->
+                <!-- ngModel: con este atributo definimos si el check estará seleccionado o deseleccionado -->
+                <!-- colo: definimos el color de los checks -->
+                <ion-checkbox 
+                    [disabled] = "check.disabled"
+                    [(ngModel)]="check.selected"
+                    [color]="check.name">
+                </ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
