@@ -30,6 +30,11 @@ export class InicioPage implements OnInit {
       icon: 'apps-outline',
       name: 'Botones y Router',
       redirectTo: '/botones'
+    },
+    {
+      icon: 'card-outline',
+      name: 'Cards',
+      redirectTo: '/card'
     }
   ];
 
