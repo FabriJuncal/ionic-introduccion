@@ -1,0 +1,109 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="fab": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "fab.page.ts" por el atributo "titulo" -->
+<app-header titulo="fab"></app-header>
+
+<ion-content>
+
+  <!-- Se creó un listado de texto para realizar las pruebas -->
+  <ion-list>
+    <ion-item *ngFor="let i of data; let j = index">
+      item {{j + 1}}
+    </ion-item>
+  </ion-list>
+
+  <!-- fab: prepara el espacio para agregar el componente -->
+  <!-- fab-button: es el componenten donde se podran agregar iconos y textos flotantes y fijos en la pantalla-->
+
+  <!-- fab colocado arriba a la derecha -->
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- fab colocado abajo a la derecha -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-forward-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- fab colocado arriba a la izquierda -->
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- fab colocado abajo a la izquierda -->
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-up-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- fab colocado en el medio a la izquierda -->
+  <ion-fab vertical="center" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- fab colocado en el medio a la derecha -->
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- fab colocado abajo a la derecha en el borde del encabezado -->
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="person"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- fab colocado abajo a la izquierda en el borde del pie de pagina -->
+  <!-- Esta es una forma de creaer un listado de "fabs" que se mostrarán al hacer "click" en el fab principal -->
+  <!-- En este caso los sub-fab se mostrarán hacia la derecha -->
+  <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button color="vimeo"><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <!-- fab colocado en el centro -->
+  <!-- Esta es una forma de creaer un listado de "fabs" que se mostrarán al hacer "click" en el fab principal -->
+  <!-- En este caso los sub-fab se mostrarán hacia arriba, abajo, a la derecha e izquierda -->
+  <!-- Los iconos tienen colores personalizados que se encuentran en el archivo "theme/variables.scss" -->
+  <ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="vimeo"><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <ion-fab-button color="facebook"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button color="youtube"><ion-icon name="logo-youtube"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button color="twitter"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+
+
+<!-- Es la forma de agregarle un footer a la pagina, es muy similar al componente "header" -->
+<!-- Se le agregó el color personalizado de YouTube que se encuentra en el archivo "theme/variables.scss" -->
+<ion-footer>
+  <ion-toolbar color="youtube">
+    <ion-title>Esto es el Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

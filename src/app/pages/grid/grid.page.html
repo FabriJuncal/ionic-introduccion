@@ -1,0 +1,49 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="grid": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "grid.page.ts" por el atributo "titulo" -->
+<app-header titulo="grid"></app-header>
+
+<ion-content>
+
+  <!-- fixed: este atributo agrega un espacio en los costados centrando el contenido -->
+  <!-- fullscreen: este atributo hará que el contenido se desplaze detrás de los encabezados y pies de página -->
+
+  <!-- Grid: El componente se compone de tres unidades: un grid, row(s) y column(s). 
+       Los columns se expandirán para llenar los rows y cambiarán de tamaño para adaptarse a los columns adicionales. 
+       Se basa en un diseño de 12 columns con diferentes puntos de interrupción según el tamaño de la pantalla. -->
+
+  <!-- size: punto por defecto de interrupción, donde le asignamos la cantidad de columns que queremos que tome-->
+  <!-- size-lg: punto de interrupción cuando la pantalla sea grande, donde le asignamos la cantidad de columns que queremos que tome-->
+  <!-- size-md: punto de interrupción cuando la pantala sea mediana, donde le asignamos la cantidad de columns que queremos que tome-->
+  <!-- size-sm: punto de interrupción cuando la pantala sea pequeña, donde le asignamos la cantidad de columns que queremos que tome-->
+  <!-- size-xs: punto de interrupción cuando la pantala sea muy pequeña, donde le asignamos la cantidad de columns que queremos que tome-->
+  <ion-grid fixed fullscreen>
+    <ion-row>
+      <!-- Creamos un array con 12 elementos, para repetir las columnas esta cantidad de veces -->
+      <!-- Agregamos los puntos de interrupción para ajustar la cantidad de cards que queremos ver en cada tamaño de la pantalla -->
+      <ion-col  size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+                *ngFor="let c of [1,1,1,1,1,1,1,1,1,1,1,1]">
+
+        <ion-card>
+
+          <!-- Agregamos una imagen en el encabezado del card -->
+          <ion-img src="/assets/shapes.svg"></ion-img>
+
+          <!-- Agregamos el encabezado con el subtitulo y titulo -->
+          <ion-card-header>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            <ion-card-title>Card Title</ion-card-title>
+          </ion-card-header>
+
+          <!-- Agregamos texto de relleno en el contenido del card -->
+          <ion-card-content>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, perferendis aperiam! Architecto cupiditate sed expedita optio natus ullam nostrum minus? Obcaecati, officia magnam. Quod, perspiciatis a sequi exercitationem facilis at!
+          </ion-card-content>
+
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
