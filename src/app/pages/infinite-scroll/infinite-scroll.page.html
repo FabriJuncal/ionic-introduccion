@@ -1,0 +1,30 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="infinite scroll": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "infinite-scroll.page.ts" por el atributo "titulo" -->
+<app-header titulo="infinite scroll"></app-header>
+
+<ion-content>
+  <!-- Creamos una lista de prueba -->
+  <ion-list>
+    <ion-item *ngFor="let item of data; let i = index">
+      <ion-label>item {{ i + 1 }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- infinite-scroll: Este componente se utiliza para cargar datos en una lista, cuando se esta llegando al final de este  -->
+  <!-- threshold: con este atributo definimos a cuantos pixeles del final queremos que se ejecute el evento y que se carguen mas datos -->
+  <!-- (ionInfinite): este atributo es el evento que se ejecuta con el Infinite Scroll y se le tiene que asignar una función -->
+  <!-- loadData($event): Esta función se ejecuta en el archivo "infinite-scroll.page.ts", lo que hace es cargar mas datos al array "data" que se recorre mas arriba con el *ngFor -->
+  <ion-infinite-scroll threshold="150px" (ionInfinite)="loadData($event)">
+    <!-- infinite-scroll-content: este componente muestra el icono y el texto de cuando se cargan los datos al llegar al final de la lista -->
+    <!-- loadingSpinner: con este atributo definimos el Spinner que se va a mostrar, hay mas alternativas en la documentación de Ionic -->
+    <!-- loadingText: con este atributo definimos el texto que se mostrará debajo del Spinner -->
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+
+
