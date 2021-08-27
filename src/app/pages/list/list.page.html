@@ -1,0 +1,29 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="list": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "list.page.ts" por el atributo "titulo" -->
+<app-header titulo="list"></app-header>
+
+<ion-content>
+
+  <!-- Utilizamos el "*ngFor" para recorrer los objetos obtenidos de la Api -->
+  <!-- | async: utilizamos este pipe par poder realizar el recorrido de los objetos de manera asíncrona -->
+  <ion-item *ngFor="let user of usuarios | async">
+  
+    <!-- Mostramos los datos obtenidos de la Api -->
+    <ion-label>
+      <h3>{{ user.name }}</h3>
+      <p>
+        {{ user.email }}
+      </p>
+    </ion-label>
+
+    <!-- slot="end": acomodamos el nro de telefono al final del componente "item" -->
+    <!-- text-right: con este atributo acomodamos el nro de telefono para que siempre lo veamos en el lado derecho de la pantalla -->
+    <ion-label slot="end" text-right>
+      {{user.phone}}
+    </ion-label>
+
+
+  </ion-item>
+
+</ion-content>

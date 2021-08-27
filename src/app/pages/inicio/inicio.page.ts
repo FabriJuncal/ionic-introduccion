@@ -70,6 +70,11 @@ export class InicioPage implements OnInit {
       icon: 'reader-outline',
       name: 'Form',
       redirectTo: '/form'
+    },
+    {
+      icon: 'list-outline',
+      name: 'List',
+      redirectTo: '/list'
     }
   ];
 
