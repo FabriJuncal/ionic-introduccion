@@ -1,0 +1,81 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="form": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "form.page.ts" por el atributo "titulo" -->
+<app-header titulo="form"></app-header>
+
+<!-- class="ion-padding": agrega un espaciado en los bordes -->
+<ion-content class="ion-padding">
+
+  <!-- list-header: este componente prepara un espacio en la cabecera de las listas -->
+  <ion-list-header>
+    <!-- Agregamos un etiqueta tomando la variable "nombre" como valor, esta variable se encuentra en el archivo "form.page.ts",
+         se agregó un operador "OR" para que se muestre el texto "No hay nombre" en el caso que la variable "nombre" este vacia -->
+    <ion-label>Nombre: {{ nombre || 'No hay nombre' }}</ion-label>
+  </ion-list-header>
+  
+  <ion-item>
+    <!-- Agregamos una etiqueta con "position="floating", para que al seleccioar este input, la etiqueta se desplace hacia arriba -->
+    <ion-label position="floating">Nombre</ion-label>
+    <!-- [(ngModel)]="nombre": con este atributo sincronizamos el campo con la variable "nombre", por lo cual este se actualizará al ingresar datos en el campo -->
+    <ion-input type="text" 
+              [(ngModel)]="nombre">
+    </ion-input>
+  </ion-item>
+
+  <br>
+
+  <!--  #formulario="ngForm": de esta manera creamos un "Formularios Reactivos" (es una libreria de Angular) -->
+  <!--                        por lo tanto nos ayudará a agregarle varias funcionalidades al formulario, como por ejemplo validarlo -->
+  <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+    <ion-list>
+      
+      <ion-list-header>
+        <!-- Agregamos una etiqueta con el metodo para verificar si el formulario se encuentra cargado con valores validas o no -->
+        <ion-label>Formulario Template: Valido {{formulario.valid}}</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <!-- type: definimos el tipo de Input -->
+        <!-- name: al estar utilizando "Formularios Reactivos", se debe utilizar el atributo "name" en cada campo -->
+        <!-- pattern: dentro de este atributo agregamos "Expreciones Regulares" para validar el campo, en este caso el Email -->
+        <!-- [(ngModel)]="usuario.email": con este atributo sincronizamos el campo con la variable "usuario.email", por lo cual este se actualizará al ingresar datos en el campo -->
+        <!-- required: con este atributo definimos que el campo es obligatorio -->
+        <ion-input 
+          type="email"
+          name="email"
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+          [(ngModel)]="usuario.email"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input 
+          type="password"
+          name="password"
+          [(ngModel)]="usuario.password"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <!-- Cremos el botón del formulario -->
+      <!-- type: definimos el tipo de botón -->
+      <!-- expand: definimos que el ancho del botón-->
+      <!-- [disabled]: con este atributo deshabilitamos con TRUE o FALSE el botón -->
+      <ion-button 
+        type="submit" 
+        expand="full"
+        [disabled]="formulario.invalid">
+        Enviar
+      </ion-button>
+
+
+    </ion-list>
+  </form>
+
+
+
+
+</ion-content>

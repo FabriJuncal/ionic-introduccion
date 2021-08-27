@@ -1,0 +1,101 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="input": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "input.page.ts" por el atributo "titulo" -->
+<app-header titulo="input"></app-header>
+
+<ion-content class="ion-padding">
+
+  <h2>Posición de Label</h2>
+
+  <!-- Inputs with labels -->
+<ion-item>
+  <ion-label>Default Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Floating Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="fixed">Fixed Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Stacked Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+
+<h2>Tipos de Inputs</h2>
+
+<!-- Default Input -->
+<ion-item>
+  <ion-label position="floating">Default Input</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<!-- Input con un Valor -->
+<ion-item>
+  <ion-label position="floating">Input con un Valor</ion-label>
+  <ion-input value="custom"></ion-input>
+</ion-item>
+
+
+<!-- Input con Placeholder -->
+<ion-item>
+  <ion-label position="floating">Input con Placeholder</ion-label>
+  <ion-input placeholder="Enter Input"></ion-input>
+</ion-item>
+
+<!-- Input con botón para limpiar el Valor -->
+<ion-item>
+  <ion-label position="floating">Input con botón para limpiar el Valor</ion-label>
+  <ion-input clearInput value="clear me"></ion-input>
+</ion-item>
+
+
+<!-- Input para Numeros -->
+<ion-item>
+  <ion-label position="floating">Input para Numeros</ion-label>
+  <ion-input type="number" value="333"></ion-input>
+</ion-item>
+
+<!-- Input para Contraseñas -->
+<ion-item>
+  <ion-label position="floating">Input para Contraseñas</ion-label>
+  <ion-input type="password"></ion-input>
+</ion-item>
+
+<!-- Input deshabilitado -->
+<ion-item>
+  <ion-label position="floating">Input deshabilitado</ion-label>
+  <ion-input value="Disabled" disabled></ion-input>
+</ion-item>
+
+
+<!-- Readonly input -->
+<ion-item>
+  <ion-label position="floating">Input de Solo Lectura</ion-label>
+  <ion-input value="Readonly" readonly></ion-input>
+</ion-item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>

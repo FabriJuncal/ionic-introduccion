@@ -60,6 +60,16 @@ export class InicioPage implements OnInit {
       icon: 'reorder-four-outline',
       name: 'Infinite Scroll',
       redirectTo: '/infinite-scroll'
+    },
+    {
+      icon: 'reorder-two-outline',
+      name: 'Input',
+      redirectTo: '/input'
+    },
+    {
+      icon: 'reader-outline',
+      name: 'Form',
+      redirectTo: '/form'
     }
   ];
 
