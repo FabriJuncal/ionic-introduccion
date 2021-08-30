@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>List Reorder</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- reorder-group: este componente siempre se tiene que utilizar con el componente "list", lo que hace es preparar la lista
+                        para poder agregarle la funcionalidad de reordenar las listas arrastrando los items de esta  -->
+    <!-- [disabled]="false": Si se encuentra como "true" es para desactivar la reordenación y "false" es para poder ordenarla -->
+    <!-- (ionItemReorder): este evento se activa al soltar el item de la lista -->
+    <!-- $: usamos este signo para definir el parametro que se enviará a la función -->
+    <ion-reorder-group 
+      [disabled]="false"
+      (ionItemReorder)="reorder( $event )"  
+    >
+      <!-- Recorremos el array "personajes" -->
+      <ion-item *ngFor="let personaje of personajes">
+        <!-- Mostramos el valor de la posición del array "personajes" -->
+        <ion-label> {{personaje}} </ion-label>
+        <!-- reorder: este componente muestra un icono y es el que nos permite arrastrar el item de la lista -->
+        <!-- Tambien se puede agregar un icono dentro del componenten "reorder" para reemplazar el que se muestra por default -->
+        <!-- slot="end": indicamos que queremos hubicar el icono al final de la fila -->
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+
+    </ion-reorder-group>
+    
+
+  </ion-list>
+  <!-- Agregamos un botón para mostrar por consola como se modifica el array "personajes" -->
+  <ion-button (click)="onClick()" expand="full">
+    Guardar
+  </ion-button>
+</ion-content>

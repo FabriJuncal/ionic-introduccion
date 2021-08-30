@@ -72,9 +72,14 @@ export class InicioPage implements OnInit {
       redirectTo: '/form'
     },
     {
-      icon: 'list-outline',
+      icon: 'list',
       name: 'List',
       redirectTo: '/list'
+    },
+    {
+      icon: 'list-circle-outline',
+      name: 'List Reorder',
+      redirectTo: '/list-reorder'
     }
   ];
 
