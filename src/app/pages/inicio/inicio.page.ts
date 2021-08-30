@@ -80,6 +80,11 @@ export class InicioPage implements OnInit {
       icon: 'list-circle-outline',
       name: 'List Reorder',
       redirectTo: '/list-reorder'
+    },
+    {
+      icon: 'refresh-circle-outline',
+      name: 'Loading',
+      redirectTo: '/loading'
     }
   ];
 
