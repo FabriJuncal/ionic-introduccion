@@ -2,6 +2,20 @@
 <ion-header class="ion-no-border">
   <!-- toolbar: es utilizado para agregar componentes dentro del "header", como por ejemplo botones para volver a la pagina anterior -->
   <ion-toolbar>
+
+    <ion-buttons slot="start">
+
+      <!-- <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button> -->
+
+      <!-- menu-button: este sub-componente del componente "menu", se utiliza para mosrar el botón del icono de hamburguesa para mostrar y ocultar el menu -->
+      <!--              por lo tanto ya trae programada las funciones para mostrar y ocultar -->
+      <!-- menu: este atributo se le tiene que pasar el nombre que se le asigno al componente "menu" en el parametro "menuId" -->
+      <ion-menu-button menu="primerMenu"></ion-menu-button>
+
+    </ion-buttons>
+
     <ion-title>Componentes</ion-title>
   </ion-toolbar>
 </ion-header>

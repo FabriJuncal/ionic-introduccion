@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// MenuController: dependencia que carga las funcionalidades para controlar el componente "menu"
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio',
@@ -88,9 +90,16 @@ export class InicioPage implements OnInit {
     }
   ];
 
-  constructor() { }
+
+  // MenuController: dependencia que carga las funcionalidades para controlar el componente "menu"
+  constructor( private menuCtrl: MenuController) { }
 
   ngOnInit() {
+  }
+
+  // Creamos la función que ejecutará el evento "click" el botón del icono de hamburguesa del menu
+  toggleMenu() {
+    this.menuCtrl.toggle();
   }
 
 }

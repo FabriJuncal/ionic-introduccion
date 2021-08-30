@@ -1,0 +1,23 @@
+<!-- menu: este componente muestra los menus lateral izquierdo y derecho si se lo configura -->
+<!-- side="start": indicamos que el menú se mostrará del lado izquierdo -->
+<!-- menuId="primerMenu": es obligario asignarle un ID al menu, por lo tanto lo definimos como "primerMenu" -->
+<!-- contentId="principal": este atributo hace referencia al ID del componente padre, en este caso el componente padre -->
+<!--                        es el "ion-router-outlet" del archivo "src/app/app.component.html" -->
+<ion-menu side="start" 
+          menuId="primerMenu" 
+          contentId="principal">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

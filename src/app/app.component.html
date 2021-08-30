@@ -1,3 +1,7 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- app-menu: componente personalizado, este se ubica en el directorio "components/menu" -->
+  <!--           este componente carga el menu lateral izquierdo -->
+  <app-menu></app-menu>
+  <!-- router-outlet: este componente carga todos los componentes de la aplicación -->
+  <ion-router-outlet id="principal"></ion-router-outlet>
 </ion-app>
