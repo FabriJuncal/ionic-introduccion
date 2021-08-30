@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonItemSliding } from '@ionic/angular';
+// Importamos la clase "IonList" para poder usar las funciones de esta para ocultar las opciones de los items de la lista
+
 // Importamos el componente "Observable" de la libreria "Reactive Extensions"
 import { Observable } from 'rxjs';
 // Importamos el servicio que creamos para consumir la Api
 import { DataService } from '../../services/data.service';
+
 
 @Component({
   selector: 'app-list',
@@ -10,6 +14,8 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./list.page.scss'],
 })
 export class ListPage implements OnInit {
+
+  @ViewChild(IonItemSliding) slidingItem: IonItemSliding;
 
   // Definimos la variable "usuarios" como un elemento "Observable" del Tipo "any"
   usuarios: Observable<any>;
@@ -27,12 +33,28 @@ export class ListPage implements OnInit {
       // En el caso de querer cancelar los datos obtenidos del Observacle se utilizaría el metodo ".unsubscribe()"
       // Hay que tener cuidado por que si no se desenscriben de los Observables, puede haber un desperdicio de Memoria
 
-      
       // this.dataService.getUser()
       //   .subscribe( (posts: any[]) => {
       //     console.log(posts)
       //   })
 
   }
+
+
+  favorite( user ){
+    console.log('Favorite', user);
+    this.slidingItem.closeOpened();
+  }
+
+  share( user ){
+    console.log('Share', user);
+    this.slidingItem.closeOpened();
+  }
+
+  borrar( user ){
+    console.log('Borrar', user);
+    this.slidingItem.closeOpened();
+  }
+
 
 }

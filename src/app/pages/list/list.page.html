@@ -5,25 +5,55 @@
 
 <ion-content>
 
-  <!-- Utilizamos el "*ngFor" para recorrer los objetos obtenidos de la Api -->
-  <!-- | async: utilizamos este pipe par poder realizar el recorrido de los objetos de manera asíncrona -->
-  <ion-item *ngFor="let user of usuarios | async">
+  <!-- list: con este componente armamos el contenedor de las listas -->
+  <ion-list>
+    <!-- item-sliding: Este componente se utiliza para mostrar botónes al deslizar para un lado el item de la lista -->
+    <!-- Utilizamos el "*ngFor" para recorrer los objetos obtenidos de la Api -->
+    <!-- | async: utilizamos este pipe par poder realizar el recorrido de los objetos de manera asíncrona -->
+    <ion-item-sliding *ngFor="let user of usuarios | async">
+      <!-- item-options: con este sub-componente de "item-sliding" se utiliza para preparar el lugar y hubicar de que lado queremos mostrar el botón-->
+      <!-- side="start": de esta manera indicamos que los botónes se mostrarán del lado izquierdo -->
+      <ion-item-options side="start">
+        <!-- item-option: con este componente mostramos los botónes al deslizar el item de la lista -->
+        <!-- (click): definimos el evento con su respectiva función a ejecutar -->
+        <ion-item-option (click)="favorite(user)">
+          <!-- icon: mostramos el icono -->
+          <!-- slot="icon-only": indicamos que será un icono grande -->
+          <!-- name: indicamos que icono queremos mostrar -->
+          <ion-icon slot="icon-only" name="heart"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="secondary" (click)="share(user)">
+          <ion-icon slot="icon-only" name="share"></ion-icon>
+        </ion-item-option>
+
+      </ion-item-options>
+      
+      <ion-item >
+        <!-- Mostramos los datos obtenidos de la Api -->
+        <ion-label>
+          <h3>{{ user.name }}</h3>
+          <p>
+            {{ user.email }}
+          </p>
+        </ion-label>
+    
+        <!-- slot="end": acomodamos el nro de telefono al final del componente "item" -->
+        <!-- text-right: con este atributo acomodamos el nro de telefono para que siempre lo veamos en el lado derecho de la pantalla -->
+        <ion-label slot="end" text-right>
+          {{user.phone}}
+        </ion-label>
   
-    <!-- Mostramos los datos obtenidos de la Api -->
-    <ion-label>
-      <h3>{{ user.name }}</h3>
-      <p>
-        {{ user.email }}
-      </p>
-    </ion-label>
+      </ion-item>
 
-    <!-- slot="end": acomodamos el nro de telefono al final del componente "item" -->
-    <!-- text-right: con este atributo acomodamos el nro de telefono para que siempre lo veamos en el lado derecho de la pantalla -->
-    <ion-label slot="end" text-right>
-      {{user.phone}}
-    </ion-label>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="borrar(user)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
 
 
-  </ion-item>
 
 </ion-content>
