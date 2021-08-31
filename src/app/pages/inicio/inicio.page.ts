@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 // MenuController: dependencia que carga las funcionalidades para controlar el componente "menu"
 import { MenuController } from '@ionic/angular';
+// Importamos el Observable
+// Observable: es un tipo de variable que se utiliza para almacenar los datos de las peticiones y
+//            tener a mano siempre información y no tener que acceder al servidor cada vez que lo necesitemos
+import { Observable } from 'rxjs';
+// Importamos las Interfaces creadas
+import { Componente } from '../../interfaces/interface';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-inicio',
@@ -10,103 +17,32 @@ import { MenuController } from '@ionic/angular';
 export class InicioPage implements OnInit {
 
 
-  // Este array sirve para cargar los Menus (de los componentes) de la pantalla principal
-  // Solamente se tendra que cargar un objeto con: el icono, nombre, y la ruta de redirección
-  componentes: Componente[] = [
-    {
-      icon: 'albums-outline',
-      name: 'Action Sheet',
-      redirectTo: '/action-sheet'
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Alert',
-      redirectTo: '/alert'
-    },
-    {
-      icon: 'person-circle-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar'
-    },
-    {
-      icon: 'apps-outline',
-      name: 'Botones',
-      redirectTo: '/botones'
-    },
-    {
-      icon: 'card-outline',
-      name: 'Cards',
-      redirectTo: '/card'
-    },
-    {
-      icon: 'checkmark-circle-outline',
-      name: 'Checkboxs',
-      redirectTo: '/check'
-    },
-    {
-      icon: 'time-outline',
-      name: 'Date Time',
-      redirectTo: '/date-time'
-    },
-    {
-      icon: 'notifications-circle-outline',
-      name: 'Fab',
-      redirectTo: '/fab'
-    },
-    {
-      icon: 'grid-outline',
-      name: 'Grid',
-      redirectTo: '/grid'
-    },
-    {
-      icon: 'reorder-four-outline',
-      name: 'Infinite Scroll',
-      redirectTo: '/infinite-scroll'
-    },
-    {
-      icon: 'reorder-two-outline',
-      name: 'Input',
-      redirectTo: '/input'
-    },
-    {
-      icon: 'reader-outline',
-      name: 'Form',
-      redirectTo: '/form'
-    },
-    {
-      icon: 'list',
-      name: 'List',
-      redirectTo: '/list'
-    },
-    {
-      icon: 'list-circle-outline',
-      name: 'List Reorder',
-      redirectTo: '/list-reorder'
-    },
-    {
-      icon: 'refresh-circle-outline',
-      name: 'Loading',
-      redirectTo: '/loading'
-    }
-  ];
+  // Creamos la variable de tipo "Observable" y le indicamos que se inicializará como un array vacio
+  // Observable: es un tipo de variable que se utiliza para almacenar los datos de las peticiones y
+  //            tener a mano siempre información y no tener que acceder al servidor cada vez que lo necesitemos
+  componentes: Observable<Componente[]>;
 
-
+  // constructor: función donde se debe indicar las Clases importadas que se van a inicializar para poder utilizar los Metodos de estas
   // MenuController: dependencia que carga las funcionalidades para controlar el componente "menu"
-  constructor( private menuCtrl: MenuController) { }
+  // DataService: dependencia personalizada que se creó en el archivo "services/data.service" y
+  //              poder acceder a los servicios consumidos mediantes peticiones
 
+  //                    |Alias| Clase importada|
+  constructor( private menuCtrl: MenuController,
+               private dataService: DataService) { }
+
+  // ngOnInit: Evento que hace referencia al iniciar la pantalla por 1ra vez
   ngOnInit() {
+  // Realizamos una petición al archivo "assets/data/menu.json"
+  // Donde en un archivo .json se almacenarán de manera estatica los nombres, iconos y rutas de los Menus
+    this.componentes = this.dataService.getMenuOptions();
   }
 
   // Creamos la función que ejecutará el evento "click" el botón del icono de hamburguesa del menu
   toggleMenu() {
+    // .toggle: Atributo de la librería importada "MenuController", donde lo utilizaremos para cerrar la ventana del menu lateral 
+    //          cada vez que seleccionemos una opción
     this.menuCtrl.toggle();
   }
 
-}
-
-// En TypeScript se crean los "interface" para crear una plantilla con los tipos de datos ya definidos
-interface Componente{
-  icon:       string;
-  name:       string;
-  redirectTo: string;
 }

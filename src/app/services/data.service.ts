@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Component } from '@angular/core';
 // Importamos el Modulo con las funciones para consumir las Apis desde Ionic
 import { HttpClient } from '@angular/common/http';
 
 // Importamos la libreria "Reactive Extensions"
 // tab: Su función es realizar una acción cuando recibe una "suscripción" (o se obtiene algun mensaje)  en el Observable
 import { tap } from 'rxjs/operators';
+// Importamos las interfaces
+import { Componente } from '../interfaces/interface';
 
 
 // Con esta función se le infica el alcance
@@ -40,6 +42,11 @@ export class DataService {
       //     console.log(posts);
       //   }
       // )
+  }
+
+  // Creamos un Metodo para acceder a los datos del archivo "menu.json", donde este contendrá los nombres, iconos y rutas de cada Menu
+  getMenuOptions(){
+    return this.http.get<Componente[]>('/assets/data/menu.json');
   }
 
 }

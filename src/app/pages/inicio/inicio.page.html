@@ -12,11 +12,17 @@
       <!-- menu-button: este sub-componente del componente "menu", se utiliza para mosrar el botón del icono de hamburguesa para mostrar y ocultar el menu -->
       <!--              por lo tanto ya trae programada las funciones para mostrar y ocultar -->
       <!-- menu: este atributo se le tiene que pasar el nombre que se le asigno al componente "menu" en el parametro "menuId" -->
-      <ion-menu-button menu="primerMenu"></ion-menu-button>
+      <ion-menu-button 
+        color="primary"
+        menu="primerMenu">
+      </ion-menu-button>
 
     </ion-buttons>
 
-    <ion-title>Componentes</ion-title>
+    <ion-title
+      color="primary">
+      Componentes
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -28,13 +34,13 @@
   <!-- [atributo]: Es la manera que tiene Angular para pasarle a un atributo una variable definida en el archivo "[componente].ts" -->
   <!-- detail: Muestra a la derecha una flecha indicando que se puede tocar para que nos redireccione o muestre algo -->
     <ion-item 
-      *ngFor="let c of componentes"
+      *ngFor="let c of componentes | async"
       [routerLink]="c.redirectTo" 
       detail>
         <!-- slot: Con este atributo indicamos donde queremos posicionar el elemento -->
         <!-- name: Con este atributo indicamos que icono queremos visualizar -->
         <!-- {{ c.icon }}: De esta manera indicamos que queremos pasarle al atributo "name" la variable "c.icon" -->
-        <ion-icon slot="start" name="{{ c.icon }}"></ion-icon>
+        <ion-icon slot="start" color="primary" name="{{ c.icon }}"></ion-icon>
         <ion-label>{{ c.name }}</ion-label>
     </ion-item>
   </ion-list>

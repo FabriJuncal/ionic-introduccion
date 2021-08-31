@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
+// Importamos la clase "RouterModule", donde contiene las funciones par autilizar el "RouterLink"
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,9 +19,11 @@ import { MenuComponent } from './menu/menu.component';
     HeaderComponent,
     MenuComponent
   ],
+  // Importamos los modulos que serán utilizados en las paginas
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    RouterModule
   ]
 })
 export class ComponentsModule { }

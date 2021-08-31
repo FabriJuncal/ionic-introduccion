@@ -6,18 +6,29 @@
 <ion-menu side="start" 
           menuId="primerMenu" 
           contentId="principal">
+  <!-- Encabezado del Menu -->
   <ion-header>
+  <!-- Toolbar del Menu -->
     <ion-toolbar color="primary">
-      <ion-title>Start Menu</ion-title>
+      <!-- Titulo del Encabezado del Menu -->
+      <ion-title>Componentes</ion-title>
     </ion-toolbar>
+
   </ion-header>
+
+  <!-- Contenido del Menu -->
   <ion-content>
-    <ion-list>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-    </ion-list>
+      
+      <ion-list>
+        <!-- menu-toggle: este subcomponente del componente "menu" se utiliza para que cada vez que seleccionemos una opción, se oculte el Menu -->
+        <!-- | async: Siempre se debe indicar esta pipe cuando el array es de tipo "Observable" -->
+        <ion-menu-toggle *ngFor="let c of componentes | async">
+          <ion-item [routerLink]="c.redirectTo">
+            <ion-icon slot="start" [name]="c.icon"></ion-icon>
+            <ion-label>{{ c.name }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    
   </ion-content>
 </ion-menu>

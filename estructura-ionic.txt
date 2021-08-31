@@ -1,0 +1,14 @@
+* node_modules: Directorio donde se almacenarán todas las dependencias que contrá la aplicación (como librerías, plugins, etc)
+* src: Directorio donde se almacena todo el contenido que contendrá la aplicación    
+*   app: Directorio donde se trabajará para desarrollar las aplicaciones
+    |   * components: Directorio donde irán los componentes personalizados que se vayan creando
+    |   * interfaces: Directorio donde irán las interfaces (plantillas de tipos de datos) que se vayan creando
+    |   * pages:      Directorio donde irán las paginas (Pagina de Cada Menu) que se vayan creando
+    |   * services:   Directorio donde irán las peticiones que se harán a las APIS
+    |   * app-routing.module.ts: Archivo donde irán todas las rutas de cada Menu para acceder mediante el LazyLoad(Carga Perezosa)
+    |   * app.component.html: archivo donde irán los componentes padres de toda la aplicación
+    |   * app.module.ts: Archivo donde se importarán todos los Modulos que se utilizará en los Menus    
+*   assets: Directorio donde irán los elementos estaticos (es decir, no se eliminan ni se actualizan)
+*   theme: Directorio donde iran los las variables CSS globales de la aplicación
+*   package.json: Archivo donde se indican las dependencias que utilizará la aplicación
+*   package-lock.json: Archivo donde se almacena el historial de modificaciones del archivo "package.json"
