@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modal Info</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- class="ion-padding": Agrega espacios en los bordes de la pantalla -->
+<ion-content class="ion-padding">
+
+  <h2>Valores a Enviar</h2>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+  <!-- [(ngModel)]="nombre": con este atributo sincronizamos el campo con la variable "usuarioModal.nombre", por lo cual este se actualizará al ingresar datos en el campo -->
+  <ion-input type="text" 
+            [(ngModel)]="usuarioModal.nombre">
+  </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Pais</ion-label>
+  <!-- [(ngModel)]="nombre": con este atributo sincronizamos el campo con la variable "usuarioModal.pais", por lo cual este se actualizará al ingresar datos en el campo -->
+  <ion-input type="text" 
+            [(ngModel)]="usuarioModal.pais">
+  </ion-input>
+  </ion-item>
+
+  <ion-button color="primary" (click)="salirSinArgumentos()" expand="full">
+    Salir sin argumentos
+  </ion-button>
+
+  <ion-button color="secondary" (click)="salirConArgumentos()" expand="full">
+    Salir con argumentos
+  </ion-button>
+
+
+  <h2>Valores Recibidos</h2>
+  <!-- Valores que se obtendran de del componente padre al mostrar el modal -->
+  <ion-item >
+    <ion-label>Nombre: {{ nombre }}</ion-label>
+    <ion-label>País: {{ pais }}</ion-label>
+  </ion-item>
+
+</ion-content>

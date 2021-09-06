@@ -1,0 +1,37 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="modal": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "modal.page.ts" por el atributo "titulo" -->
+<app-header titulo="modal"></app-header>
+<!-- class="ion-padding": Agrega espacios en los bordes de la pantalla -->
+<ion-content class="ion-padding">
+    <!-- (click): Evento que ejecutará la función abrirModal() -->
+    <!-- expand="full": Indica que el botón se extenderá todo el ancho de la pantalla -->
+    <ion-button (click)="abrirModal()" expand="full">
+        Abrir Modal
+    </ion-button>
+
+    <h2>Valores a Enviar</h2>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+    <!-- [(ngModel)]="nombre": con este atributo sincronizamos el campo con la variable "usuario.nombre", por lo cual este se actualizará al ingresar datos en el campo -->
+    <ion-input type="text" 
+              [(ngModel)]="usuario.nombre">
+    </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Pais</ion-label>
+    <!-- [(ngModel)]="nombre": con este atributo sincronizamos el campo con la variable "usuario.pais", por lo cual este se actualizará al ingresar datos en el campo -->
+    <ion-input type="text" 
+              [(ngModel)]="usuario.pais">
+    </ion-input>
+    </ion-item>
+
+    <h2>Valores Recibidos</h2>
+    
+    <!-- Obtenemos los datos del Modal (Sería desde el componente hijo) -->
+    <ion-item >
+      <ion-label>Nombre: {{ nombre }}</ion-label>
+      <ion-label>País: {{ pais }}</ion-label>
+    </ion-item>
+
+</ion-content>
