@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <!-- Botón para volver a la página anterior -->
+    <!-- slot="start": Indicamos que posicionaremos el botón al inicio del Toolbar -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Popover</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarPop( $event )">
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-button  
+      color="secondary"
+      expand="full"
+      (click)="mostrarPop( $event )">
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        POPOVER
+    </ion-button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarPop( $event )">
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Footer</ion-title>
+
+  </ion-toolbar>
+</ion-footer>
