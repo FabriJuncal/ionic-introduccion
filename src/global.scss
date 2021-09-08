@@ -29,3 +29,55 @@
 .rojo span, .rojo .action-sheet-icon{
     color: red;
 }
+
+// ==================================================================================================================
+/*
+Este código CSS se tomo de la libreria animate.css
+URL: https://animate.style/
+
+    Efecto para que la lista se visualice de manera suave
+*/
+
+.rojo span, .rojo .sc-ion-action-sheet-md {
+    color: red !important;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated.fast {
+    -webkit-animation-duration: 1000ms;
+    animation-duration: 1000ms;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
+
+
+// ==================================================================================================================

@@ -88,5 +88,10 @@
       "icon": "battery-half-outline",
       "name": "Progress Bar",
       "redirectTo": "/progress-bar"
+    },
+    {
+      "icon": "reload-outline",
+      "name": "Refresher",
+      "redirectTo": "/refresher"
     }
   ]

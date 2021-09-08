@@ -88,6 +88,10 @@ const routes: Routes = [
   {
     path: 'progress-bar',
     loadChildren: () => import('./pages/progress-bar/progress-bar.module').then( m => m.ProgressBarPageModule)
+  },
+  {
+    path: 'refresher',
+    loadChildren: () => import('./pages/refresher/refresher.module').then( m => m.RefresherPageModule)
   }
   // Comiento este path, para no redirigir a esta pagina, ya que esta pagina se utiliza para el componente "modal"
   // ,{

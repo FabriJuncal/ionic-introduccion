@@ -1,0 +1,28 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="refresher": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "refresher.page.ts" por el atributo "titulo" -->
+<app-header titulo="refresher"></app-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Refresher: componente que aparece para recargar la página al mover la lista hacía abajo-->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- *ngIf: Atributo que simula el IF, si este se cumple se muestra el elemento html -->
+  <!-- class="animated fast fadeIn": agregamos las clases de animate.css para que el elemento desaparezca de manera suave -->
+  <h1 *ngIf="items.length === 0"
+      class="animated fast fadeIn">Tire para refrescar</h1>
+
+  <!-- *ngIf: Atributo que simula el IF, si este se cumple se muestra el elemento html -->
+  <!-- class="animated fast fadeIn": agregamos las clases de animate.css para que el elemento aparezca de manera suave -->
+  <!-- *ngFor: Atributo que simula el FOR, sirve pare recorer arrays, en este caso "items" -->
+  <ion-list *ngIf="items.length > 0"
+            class="animated fast fadeIn">
+    <ion-item *ngFor="let item of items; let i = index">
+      <ion-label>Item {{ i + 1 }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
