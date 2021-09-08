@@ -84,6 +84,10 @@ const routes: Routes = [
   {
     path: 'popover',
     loadChildren: () => import('./pages/popover/popover.module').then( m => m.PopoverPageModule)
+  },
+  {
+    path: 'progress-bar',
+    loadChildren: () => import('./pages/progress-bar/progress-bar.module').then( m => m.ProgressBarPageModule)
   }
   // Comiento este path, para no redirigir a esta pagina, ya que esta pagina se utiliza para el componente "modal"
   // ,{

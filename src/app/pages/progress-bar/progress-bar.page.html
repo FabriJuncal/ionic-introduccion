@@ -1,0 +1,43 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="progress-bar": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "progress-bar.page.ts" por el atributo "titulo" -->
+<app-header titulo="progress bar"></app-header>
+
+<ion-content class="ion-padding">
+
+  <!-- progress-bar: Este componente indica con una barra de progreso los valores de algo que se quiera representar -->
+  <ion-progress-bar [value]="porcentaje"></ion-progress-bar>
+
+  <ion-list>
+
+    <ion-item>
+
+      <!-- range: componente para seleccionar el rango de valores numericos -->
+      <!-- min y max: atributos que indican lo minimo que se podrá seleccionar y el maximo -->
+      <!-- step: indica de a cuanto se podrá seleccionar los valores en el rango -->
+      <!-- dualKnobs: indica si se quiere mostrar o no dos perillas -->
+      <!-- pin: indica si se quiere mostrar o no el contador que aparece arriba de la perilla -->
+      <!-- snaps: Si true, la perilla se ajusta para marcar las marcas espaciadas uniformemente según el valor de la propiedad del paso -->
+      <!-- snaps: Si true, las marcas de graduación se muestran según el valor del paso. Solo aplica cuando snapses true -->
+      <!-- value: indica el valor seleccionado dentro del rango -->
+      <!-- (ionChange): Evento que se ejecuta al detectar algún campo en el valor del componente -->
+      <ion-range
+        min="1" max="100"
+        step="1" 
+        dualKnobs="false" 
+        pin="true"
+        snaps="true" 
+        ticks="false" 
+        value="0,05"
+        color="primary"
+        (ionChange)="rangeChange($event)">
+
+        <ion-label slot="start">0</ion-label>
+        <ion-label slot="end">100</ion-label>
+        
+      </ion-range>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>
