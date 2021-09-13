@@ -49,4 +49,9 @@ export class DataService {
     return this.http.get<Componente[]>('/assets/data/menu.json');
   }
 
+  // Creamos un metodo para obtener los datos de relleno de una API
+  getAlbumes(){
+    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/albums');
+  }
+
 }

@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
 // Importamos el Modulo con las funciones para consumir las Apis desde Ionic
 import { HttpClientModule } from '@angular/common/http';
+// Importamos el Modulo con los Pipes
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule.forRoot(),
     AppRoutingModule,
     ComponentsModule,
+    PipesModule,
     HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

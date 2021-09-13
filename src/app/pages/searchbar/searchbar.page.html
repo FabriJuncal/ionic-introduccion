@@ -1,0 +1,37 @@
+
+<!-- class="ion-no-border": Quita los bordes del encabezado -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <!-- Botón para volver a la página anterior -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <!-- Titulo de la página -->
+    <ion-title>Search Bar</ion-title>
+  </ion-toolbar>
+
+  <!-- searchbar: componente que se utiliza para realizar busquedas  -->
+  <!-- (ionChange): evento que se ejecuta al detectar un cambio en el input-->
+  <ion-searchbar placeholder="Filter Pizza"
+                 (ionChange)="onSearchChange( $event )">
+  </ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+
+  <!-- Creamos un listado de texto de relleno que lo obtenemos de una API -->
+  <ion-list>
+    <!-- *ngFor: atributo que funciona para recorrer un array -->
+    <!-- let album of albumes: indicamos que queremos recorrer el array "albumes" y que cada elemento se guardará en la variable "album" -->
+    <!-- | filtro: textoBuscar: indicamos el "Pipe" que se utilizará -->
+    <!-- en este caso utilizamos el pipe "filtro" y enviamos como parametro la variable "textoBuscar" definido en el archivo "searchbar.page.ts" -->
+    <ion-item *ngFor="let album of albumes | filtro: textoBuscar">
+      <!-- Mostramos cada elemento obtenido del array "albumes" -->
+      <ion-label>{{ album.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
