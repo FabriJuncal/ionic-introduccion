@@ -28,7 +28,8 @@
     <!-- let heroe of (superHeroes | async): indicamos que queremos recorrer el array "superHeroes" y que cada elemento se guardará en la variable "heroe",
                                              con el "| async" nos subscribimos a un observable (en este caso la variable "superHeroes") para obener los datos de este-->
     <!-- | filtro: publisher: 'publisher': le pasamos los parametros "filtro, publisher, 'publisher'" al Pipe que creamos -->
-    <ion-item *ngFor="let heroe of (superHeroes | async) | filtro: publisher: 'publisher'">
+    <ion-item *ngFor="let heroe of (superHeroes | async) | filtro: publisher: 'publisher'"
+              class="animated fadeIn fast">
       <ion-label>
         <h3>{{ heroe.superhero }} <small>{{ heroe.alter_ego }}</small></h3>
         <p>
