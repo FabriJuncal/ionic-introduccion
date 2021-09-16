@@ -54,4 +54,9 @@ export class DataService {
     return this.http.get<any[]>('https://jsonplaceholder.typicode.com/albums');
   }
 
+    // Creamos un Metodo para acceder a los datos del archivo "menu.json", donde este contendrá los nombres, iconos y rutas de cada Menu
+    getHeroes(){
+      return this.http.get('/assets/data/superheroes.json');
+    }
+
 }

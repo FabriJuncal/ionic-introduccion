@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SearchbarPageRoutingModule } from './searchbar-routing.module';
 
 import { SearchbarPage } from './searchbar.page';
+// Importamos el modulo que contiene los Pipe's
 import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({

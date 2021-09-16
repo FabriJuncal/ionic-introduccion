@@ -14,7 +14,7 @@
 
   <!-- searchbar: componente que se utiliza para realizar busquedas  -->
   <!-- (ionChange): evento que se ejecuta al detectar un cambio en el input-->
-  <ion-searchbar placeholder="Filter Pizza"
+  <ion-searchbar placeholder="Escriba para buscar"
                  (ionChange)="onSearchChange( $event )">
   </ion-searchbar>
 
@@ -28,7 +28,7 @@
     <!-- let album of albumes: indicamos que queremos recorrer el array "albumes" y que cada elemento se guardará en la variable "album" -->
     <!-- | filtro: textoBuscar: indicamos el "Pipe" que se utilizará -->
     <!-- en este caso utilizamos el pipe "filtro" y enviamos como parametro la variable "textoBuscar" definido en el archivo "searchbar.page.ts" -->
-    <ion-item *ngFor="let album of albumes | filtro: textoBuscar">
+    <ion-item *ngFor="let album of albumes | filtro: textoBuscar: 'title'">
       <!-- Mostramos cada elemento obtenido del array "albumes" -->
       <ion-label>{{ album.title }}</ion-label>
     </ion-item>
