@@ -103,5 +103,10 @@
       "icon": "copy",
       "name": "Segment",
       "redirectTo": "/segment"
+    },
+    {
+      "icon": "barcode-outline",
+      "name": "Skeleton",
+      "redirectTo": "/skeleton"
     }
   ]

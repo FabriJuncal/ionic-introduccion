@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 
 // Importamos la libreria "Reactive Extensions"
 // tab: Su función es realizar una acción cuando recibe una "suscripción" (o se obtiene algun mensaje)  en el Observable
-import { tap } from 'rxjs/operators';
+// delay: Su función es retardar la devolución de datos en milisegundos
+import { delay, tap } from 'rxjs/operators';
 // Importamos las interfaces
 import { Componente } from '../interfaces/interface';
 
@@ -56,7 +57,10 @@ export class DataService {
 
     // Creamos un Metodo para acceder a los datos del archivo "menu.json", donde este contendrá los nombres, iconos y rutas de cada Menu
     getHeroes(){
-      return this.http.get('/assets/data/superheroes.json');
+      return this.http.get('/assets/data/superheroes.json')
+          .pipe(
+            delay(1500) // Este pipe se utiliza para retardar la respuesta de la petición en milisegundos
+          );
     }
 
 }

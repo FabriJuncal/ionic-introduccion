@@ -1,0 +1,75 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="segment": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "segment.page.ts" por el atributo "titulo" -->
+<app-header titulo="skeleton"></app-header>
+
+<!-- segment: componente que se utiliza igual a un "tab" -->
+<ion-segment (ionChange)="segmentChanged($event)"
+             color="tertiary">
+
+  <ion-segment-button value="todos">
+    <ion-label>todos</ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button value="DC Comics">
+    <ion-label>DC Comics</ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button value="Marvel Comics">
+    <ion-label>Marvel Comics</ion-label>
+  </ion-segment-button>
+
+</ion-segment>
+
+<ion-content>
+
+  <ion-list>
+    <!-- *ngFor: atributo que funciona para recorrer un array -->
+    <!-- let heroe of (superHeroes | async): indicamos que queremos recorrer el array "superHeroes" y que cada elemento se guardará en la variable "heroe",
+                                             con el "| async" nos subscribimos a un observable (en este caso la variable "superHeroes") para obener los datos de este-->
+    <!-- | filtro: publisher: 'publisher': le pasamos los parametros "filtro, publisher, 'publisher'" al Pipe que creamos -->
+    <ion-item *ngFor="let heroe of (superHeroes | async) | filtro: publisher: 'publisher'"
+              class="animated fadeIn fast">
+      <ion-label>
+        <h3>{{ heroe.superhero }} <small>{{ heroe.alter_ego }}</small></h3>
+        <p>
+          {{ heroe.first_appearance }}
+        </p>
+      </ion-label>
+      <!--  slot="end" class="ion-text-right": posicionamos el texto bien a la derecha -->
+      <ion-label slot="end" class="ion-text-right">
+        {{heroe.publisher}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <!--  *ngIf="(superHeroes | async) === null": Indicamos que se muestre este componente, solo cuando la variable 
+    superHerores (que lo formateamos con el pipe "async" para poder leerlo), es "null" -->
+  <ion-list *ngIf="(superHeroes | async) === null">
+    
+    <!-- Creamos un array artificial para crear un bucle de 10 veces -->
+    <ion-item *ngFor="let item of [1,1,1,1,1,1,1,1,1,1]">
+      <ion-label>
+        <!-- skeleton-text: Este componente se utiliza cuando se realiza alguna petición y esperamos algun dato,
+                            nos ayuda a indicar que la app esta cargando rellenando los espacios vacios donde se mostrará algo. -->
+        <!-- animated: este atributo hará que el componente "skeleton" haga un efecto de parpadeo/brillo -->
+        <!-- style="width: xx": indicamos el ancho del Skeleton que será el remplazo de algun componente hasta que se cargue la página -->
+        <h3>
+          <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+      <!--  slot="end" class="ion-text-right": posicionamos el texto bien a la derecha -->
+      <ion-label slot="end" class="ion-text-right"
+                  style="margin-right: -30%; margin-left: 35%;">
+        <ion-skeleton-text animated style="width: 40px"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  
+ 
+</ion-content>
