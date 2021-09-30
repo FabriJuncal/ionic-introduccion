@@ -108,5 +108,10 @@
       "icon": "barcode-outline",
       "name": "Skeleton",
       "redirectTo": "/skeleton"
+    },
+    {
+      "icon": "log-out-outline",
+      "name": "Slides",
+      "redirectTo": "/slides"
     }
   ]

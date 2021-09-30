@@ -1,0 +1,46 @@
+<!-- Quitamos el borde del Header -->
+<!-- Y agregamos una clase con la variable "ocultar", este lo utilizamos para ocultar
+     de manera elegante el Header al cambiar de página -->
+<ion-header class="ion-no-border" [ngClass]="ocultar">
+  <!-- Agregamos un avatar centrado en el Header -->
+  <!-- Agregamos estilo al avatar para que aparezca de manera elegante -->
+  <ion-toolbar>
+    <img src="/assets/slides/user-6.svg"
+         class="avatar animated fadeIn">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- slides: componente padre donde iran los componente hijos "slide" -->
+  <!-- pager="true": este atributo define si se muestra o no los puntos para seleccionar los slide -->
+  <ion-slides pager="true" class="slide-full">
+    <!-- Recorremos el array "slides" y obtenemos sus datos agregandolos en los slides -->
+    <ion-slide *ngFor="let slide of slides">
+      <!-- Muestramos el componente "card" con el estilo de IOS -->
+      <ion-card mode="ios">
+        <!-- Mostramos la imagen obteniendo la URL de la variable "slide.img" -->
+        <!-- Agregamos estilos para centrar la imagen dentro del slide -->
+        <img [src]="slide.img" class="slide-image">
+        <!-- Agregamos el titulo y el contenido al componente "card" -->
+        <ion-card-header>
+          <ion-card-title> {{ slide.titulo }} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ slide.desc }}
+        </ion-card-content>
+
+      </ion-card>
+
+    </ion-slide>
+    <!-- En el ultimo slide agregamos un botón para regresar a la página principal -->
+    <ion-slide>
+      <ion-button (click)="onClick()"
+                  expand="full"
+                  fill="clear">
+        ¡Comenzar!
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
