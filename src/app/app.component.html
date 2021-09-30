@@ -1,7 +1,45 @@
 <ion-app>
-  <!-- app-menu: componente personalizado, este se ubica en el directorio "components/menu" -->
-  <!--           este componente carga el menu lateral izquierdo -->
-  <app-menu></app-menu>
-  <!-- router-outlet: este componente carga todos los componentes de la aplicación -->
-  <ion-router-outlet id="principal"></ion-router-outlet>
+
+  <!-- split-pane: este componete arma un manú lateral fijo a la izquierda -->
+  <!--contentId="principal": el atributo y valor es el mismo que el del componente "menu", estos tienen que hacer referencia al "ID" del componente "router-outlet"-->
+  <!-- when="md": inficamos a partir de que tamaño de la pantalla se debe visualizar el componente -->
+  <!-- (ionSplitPaneVisible): Este evento se ejecuta al cargarse la página la función "onSplitPaneVisible()" en el cual ejecuta el servició para obtener los menus-->
+  <ion-split-pane contentId="principal" when="md" (ionSplitPaneVisible)="onSplitPaneVisible()">
+    
+    <!-- app-menu: componente personalizado, este se ubica en el directorio "components/menu" -->
+    <!--           este componente carga el menu lateral izquierdo -->
+    <ion-menu side="start" 
+    menuId="primerMenu" 
+    contentId="principal">
+      <!-- Encabezado del Menu -->
+      <ion-header>
+        <!-- Toolbar del Menu -->
+        <ion-toolbar color="primary">
+          <!-- Titulo del Encabezado del Menu -->
+          <ion-title>Componentes</ion-title>
+        </ion-toolbar>
+
+      </ion-header>
+
+      <!-- Contenido del Menu -->
+      <ion-content>
+
+        <ion-list>
+          <!-- menu-toggle: este subcomponente del componente "menu" se utiliza para que cada vez que seleccionemos una opción, se oculte el Menu -->
+          <!-- | async: Siempre se debe indicar esta pipe cuando el array es de tipo "Observable" -->
+          <ion-menu-toggle autoHide="false" *ngFor="let c of componentes | async">
+            <ion-item [routerLink]="c.redirectTo">
+              <ion-icon slot="start" [name]="c.icon"></ion-icon>
+              <ion-label>{{ c.name }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+
+    <!-- router-outlet: este componente carga todos los componentes de la aplicación -->
+    <ion-router-outlet id="principal"></ion-router-outlet>
+  </ion-split-pane>
+
 </ion-app>
