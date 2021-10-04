@@ -108,6 +108,10 @@ const routes: Routes = [
   {
     path: 'slides',
     loadChildren: () => import('./pages/slides/slides.module').then( m => m.SlidesPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   }
   // Comiento este path, para no redirigir a esta pagina, ya que esta pagina se utiliza para el componente "modal"
   // ,{

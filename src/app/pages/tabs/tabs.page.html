@@ -1,0 +1,24 @@
+<!-- tabs: Con este componente y los sub-componentes se crean los tabs en donde se puede seleccionar
+           un menú en la parte inferior de la pantalla, es decír, es un tipo de menú de navegación -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom" color="primary">
+
+    <!-- tab="account": Indicamos la ruta a la que se va a acceder -->
+    <ion-tab-button tab="account">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Account</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+    <!-- tab="contact": Indicamos la ruta a la que se va a acceder -->
+    <ion-tab-button tab="contact">
+      <ion-icon name="call"></ion-icon>
+      <ion-label>Contact</ion-label>
+    </ion-tab-button>
+    <!-- tab="settings": Indicamos la ruta a la que se va a acceder -->
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Settings</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
