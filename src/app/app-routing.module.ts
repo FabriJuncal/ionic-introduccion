@@ -112,6 +112,10 @@ const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'toast',
+    loadChildren: () => import('./pages/toast/toast.module').then( m => m.ToastPageModule)
   }
   // Comiento este path, para no redirigir a esta pagina, ya que esta pagina se utiliza para el componente "modal"
   // ,{

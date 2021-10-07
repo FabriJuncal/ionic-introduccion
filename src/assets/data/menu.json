@@ -118,5 +118,10 @@
       "icon": "cog",
       "name": "Tabs",
       "redirectTo": "/tabs/account"
+    },
+    {
+      "icon": "chatbox-outline",
+      "name": "Toast",
+      "redirectTo": "/toast"
     }
   ]
