@@ -21,7 +21,7 @@ export class ListReorderPage implements OnInit {
   }
 
   // event: CustomEvent<ItemReorderEventDetail>: Creamos un parametro de Tipo "ItemReorderEventDetail"
-  reorder( event: CustomEvent<ItemReorderEventDetail> ) {
+  reorder( event: any ) {
     console.log(event);
     // Terminamos el ordenamiento con el metodo ".complete()"
     // y le pasamos como parametro "this.personajes" para guardar los campos realizados en la lista
