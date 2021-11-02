@@ -47,7 +47,7 @@ export class DataService {
 
   // Creamos un Metodo para acceder a los datos del archivo "menu.json", donde este contendrá los nombres, iconos y rutas de cada Menu
   getMenuOptions(){
-    return this.http.get<Componente[]>('/assets/data/menu.json');
+    return this.http.get<Componente[]>('assets/data/menu.json');
   }
 
   // Creamos un metodo para obtener los datos de relleno de una API
@@ -57,7 +57,7 @@ export class DataService {
 
     // Creamos un Metodo para acceder a los datos del archivo "menu.json", donde este contendrá los nombres, iconos y rutas de cada Menu
     getHeroes(){
-      return this.http.get('/assets/data/superheroes.json')
+      return this.http.get('assets/data/superheroes.json')
           .pipe(
             delay(1500) // Este pipe se utiliza para retardar la respuesta de la petición en milisegundos
           );
