@@ -95,6 +95,11 @@
       "redirectTo": "/refresher"
     },
     {
+      "icon": "scan-outline",
+      "name": "Scan QR",
+      "redirectTo": "/scan-qr"
+    },
+    {
       "icon": "search",
       "name": "Search Bar",
       "redirectTo": "/searchbar"

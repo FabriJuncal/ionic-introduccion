@@ -1,0 +1,15 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="action sheet": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "action-sheet.page.ts" por el atributo "titulo" -->
+<app-header titulo="Scan QR"></app-header>
+
+<ion-content>
+
+  <div class="ion-padding">
+    <ion-button (click)="startScanning()" expand="full">
+     qrscanner
+    </ion-button>
+    <p *ngIf="qrText">QR Scan text: {{ qrText }}</p>
+</div>
+
+</ion-content>

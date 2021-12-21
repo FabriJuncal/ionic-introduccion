@@ -116,6 +116,10 @@ const routes: Routes = [
   {
     path: 'toast',
     loadChildren: () => import('./pages/toast/toast.module').then( m => m.ToastPageModule)
+  },
+  {
+    path: 'scan-qr',
+    loadChildren: () => import('./pages/scan-qr/scan-qr.module').then( m => m.ScanQRPageModule)
   }
   // Comiento este path, para no redirigir a esta pagina, ya que esta pagina se utiliza para el componente "modal"
   // ,{
