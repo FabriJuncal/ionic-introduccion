@@ -46,8 +46,17 @@ export class ToastPage implements OnInit {
   async presentToast(message: string) {
     // con el "toastController" podremos configurar las propiedades del Toast para que se visualice como queramos
     const toast = await this.toastController.create({
-      message,       // Mensaje que se va a mostrar, hacemos referencia al parametro de la función
-      duration: 2000 // Duración que se va  amostrar el mensaje en milisegundos
+      message,        // Mensaje que se va a mostrar, hacemos referencia al parametro de la función
+      duration: 2000, // Duración que se va  amostrar el mensaje en milisegundos
+      buttons: [
+        {
+          side: 'end',
+          text: 'Deshacer',
+          handler: () => {
+            console.log('Favorite clicked');
+          }
+        }
+      ]
     });
     toast.present();
   }
