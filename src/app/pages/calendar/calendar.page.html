@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+        <!-- Botón para volver a la página anterior -->
+    <!-- slot="start": Indicamos que posicionaremos el botón al inicio del Toolbar -->
+    <ion-buttons slot="start">
+      <!-- defaultHref: definimos la ruta por default en el caso que no se tenga un historial de paginas, 
+                        así de este modo redireccione a la ruta vacia y a su vez como lo programamos nos 
+                        redirecciona al menu principal -->
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-calendar [(ngModel)]="date"
+                (change)="onChange($event)"
+                [type]="type"
+                [format]="'YYYY-MM-DD'"
+                [options]="calendarOptions"
+                >
+                <!-- (monthChange)="onMonthChanged($event)" => Evento que se ejecuta al cambiar el mes -->
+  </ion-calendar>
+      <h1 class="ion-text-center" >{{ selectedDate }}</h1>
+</ion-content>

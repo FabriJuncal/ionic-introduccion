@@ -25,6 +25,11 @@
       "redirectTo": "/card"
     },
     {
+      "icon": "calendar-outline",
+      "name": "Calendar",
+      "redirectTo": "/calendar"
+    },
+    {
       "icon": "checkmark-circle-outline",
       "name": "Checkboxs",
       "redirectTo": "/check"

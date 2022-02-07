@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PipesModule } from './pipes/pipes.module';
 // Importamos el Plugin para poder escaner distintos tipos de codigos
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+// Importamos el componente de Calendario
+import { CalendarModule } from 'ion2-calendar';
 
 @NgModule({
     declarations: [AppComponent],
@@ -23,7 +25,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
         AppRoutingModule,
         ComponentsModule,
         PipesModule,
-        HttpClientModule
+        HttpClientModule,
+        CalendarModule.forRoot()
     ],
     providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner],
     bootstrap: [AppComponent]
