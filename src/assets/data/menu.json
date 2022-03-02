@@ -10,6 +10,11 @@
       "redirectTo": "/alert"
     },
     {
+      "icon": "file-tray-full",
+      "name": "Autocomplete",
+      "redirectTo": "/auto-complete"
+    },
+    {
       "icon": "person-circle-outline",
       "name": "Avatar",
       "redirectTo": "/avatar"

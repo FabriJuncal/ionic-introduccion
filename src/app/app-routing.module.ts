@@ -123,6 +123,10 @@ const routes: Routes = [
   },  {
     path: 'calendar',
     loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'auto-complete',
+    loadChildren: () => import('./pages/auto-complete/auto-complete.module').then( m => m.AutoCompletePageModule)
   }
 
   // Comiento este path, para no redirigir a esta pagina, ya que esta pagina se utiliza para el componente "modal"

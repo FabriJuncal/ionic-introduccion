@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 // delay: Su función es retardar la devolución de datos en milisegundos
 import { delay, tap } from 'rxjs/operators';
 // Importamos las interfaces
-import { Componente } from '../interfaces/interface';
+import { Componente, CountryModel } from '../interfaces/interface';
 
 
 // Con esta función se le infica el alcance
@@ -23,6 +23,8 @@ import { Componente } from '../interfaces/interface';
 // Para mas info ver la siguiente pagina:
 // https://www.arquitecturajava.com/angular-async-pipe-y-observables/
 export class DataService {
+
+  private countries:CountryModel[] = [];
 
   // Le agregamos una dependencia al "constructor"
   // En este caso será la Clase "HttpClient" que contiene todos los metodos para realizar peticiones HTTP
@@ -55,12 +57,22 @@ export class DataService {
     return this.http.get<any[]>('https://jsonplaceholder.typicode.com/albums');
   }
 
+  // Creamos un Metodo para acceder a los datos del archivo "menu.json", donde este contendrá los nombres, iconos y rutas de cada Menu
+  getHeroes(){
+    return this.http.get('assets/data/superheroes.json')
+        .pipe(
+          delay(1500) // Este pipe se utiliza para retardar la respuesta de la petición en milisegundos
+        );
+  }
+
     // Creamos un Metodo para acceder a los datos del archivo "menu.json", donde este contendrá los nombres, iconos y rutas de cada Menu
-    getHeroes(){
-      return this.http.get('assets/data/superheroes.json')
+    getContries(){
+      return this.http.get('assets/data/contries.json')
           .pipe(
             delay(1500) // Este pipe se utiliza para retardar la respuesta de la petición en milisegundos
           );
     }
+
+
 
 }

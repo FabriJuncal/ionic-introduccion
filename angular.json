@@ -112,6 +112,11 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ionic4-auto-complete/assets/",
+                "output": "./assets/"
               }
             ]
           },

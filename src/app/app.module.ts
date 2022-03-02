@@ -16,6 +16,7 @@ import { PipesModule } from './pipes/pipes.module';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 // Importamos el componente de Calendario
 import { CalendarModule } from 'ion2-calendar';
+import { AutoCompleteModule } from 'ionic4-auto-complete';
 
 @NgModule({
     declarations: [AppComponent],
@@ -26,7 +27,8 @@ import { CalendarModule } from 'ion2-calendar';
         ComponentsModule,
         PipesModule,
         HttpClientModule,
-        CalendarModule.forRoot()
+        CalendarModule.forRoot(),
+        AutoCompleteModule,
     ],
     providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner],
     bootstrap: [AppComponent]

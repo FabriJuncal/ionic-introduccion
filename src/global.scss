@@ -24,6 +24,7 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "~ionic4-auto-complete/auto-complete";
 
 // Agregamos los estilos globales que tomará Ionic para sus componentes
 .rojo span, .rojo .action-sheet-icon{
@@ -78,6 +79,12 @@ URL: https://animate.style/
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
   }
+
+  .loading input.searchbar-input {
+    background:      white url(../node_modules/ionic4-auto-complete/assets/loading.gif) no-repeat right 4px center;
+    background-size: 25px 25px;
+  }
+
 
 
 // ==================================================================================================================

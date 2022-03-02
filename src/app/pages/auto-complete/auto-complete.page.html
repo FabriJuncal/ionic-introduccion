@@ -1,0 +1,79 @@
+<!-- Creamos el componente "header" -->
+<!-- titulo="input": De esta manera enviamos un string por el atributo "titulo" -->
+<!-- [titulo]="variable": De esta manera enviamos una varible del archivo "input.page.ts" por el atributo "titulo" -->
+<app-header titulo="autocomplete"></app-header>
+
+<ion-content>
+  <ion-list style="height: 100%;">
+    <!-- <ion-segment [value]="selectedSegment"
+                 (ionChange)="onClickSegment($event)">
+      <ion-segment-button *ngFor="let segment of segments"
+                          [value]="segment.key">
+        <ion-label>
+          {{ segment.label }}
+        </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-item-divider></ion-item-divider> -->
+
+
+    <ion-card *ngIf="selectedSegment === 'simple-service'"
+              style="height: 100%;">
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="label">
+            Seleccionar un País:
+          </ion-col>
+          <ion-col [size]="12">
+            <!-- Componente del Autocompletado -->
+            <app-siemple-service-autocomplete></app-siemple-service-autocomplete>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- <ion-card *ngIf="selectedSegment === 'ingredients'"
+              style="height: 100%;">
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="label">
+            Select Ingredients
+          </ion-col>
+          <ion-col [size]="12">
+            <ingredient-picker></ingredient-picker>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="selectedSegment === 'team-picker'"
+              style="height: 100%;">
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="label">
+            Select Multiple People
+          </ion-col>
+          <ion-col [size]="12">
+            <multi-function></multi-function>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="selectedSegment === 'country-picker'"
+              style="height: 100%;">
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="label">
+            Select up to 3 Countries
+          </ion-col>
+          <ion-col [size]="12">
+            <custom-template></custom-template>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card> -->
+
+  </ion-list>
+</ion-content>

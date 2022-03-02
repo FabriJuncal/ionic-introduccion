@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+// Importamos la clase "RouterModule", donde contiene las funciones par autilizar el "RouterLink"
+import { RouterModule } from '@angular/router';
+// Importamos la clase "AutocompleteModule", donde contiene las funciones para utilizar el "Autocomplete"
+import {AutoCompleteModule} from 'ionic4-auto-complete';
 // Componentes Importados
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { PopinfoComponent } from './popinfo/popinfo.component';
-// Importamos la clase "RouterModule", donde contiene las funciones par autilizar el "RouterLink"
-import { RouterModule } from '@angular/router';
+import { SiempleServiceAutocompleteComponent } from './siemple-service-autocomplete/siemple-service-autocomplete.component';
+import { ContriesAutocompleteService } from '../services/contries-autocomplete.service';
+
+
 
 
 
@@ -16,19 +22,25 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     MenuComponent,
-    PopinfoComponent
+    PopinfoComponent,
+    SiempleServiceAutocompleteComponent
   ],
   // Solo se exportan los modulos que serán utilizados en otras paginas
   exports:[
     HeaderComponent,
     MenuComponent,
-    PopinfoComponent
+    PopinfoComponent,
+    SiempleServiceAutocompleteComponent
   ],
   // Importamos los modulos que serán utilizados en las paginas
   imports: [
     CommonModule,
     IonicModule,
-    RouterModule
+    RouterModule,
+    AutoCompleteModule
+  ],
+  providers: [
+    ContriesAutocompleteService
   ]
 })
 export class ComponentsModule { }
