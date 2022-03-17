@@ -28,6 +28,9 @@ import { ModalInfoPageModule } from '../modal-info/modal-info.module';
     ComponentsModule,
     ModalInfoPageModule      // Es necesario importar el modulo de "Modal Info"
                              // para obtener todas las opciones y configuraciones de este Componente
+                             // SOLUCION PROBLEMA: Si tienen el problema que se abre el modal apenas se ingresa 
+                             // a la pantalla principal, se debe importar el modulo de la pagina modal 
+                             // en el archivo "app.module.ts" y no hace agregar nada en el "entryComponents"
   ],
   declarations: [ModalPage]
 })
